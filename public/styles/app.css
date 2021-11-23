@@ -1,0 +1,117 @@
+html,
+body {
+  font-family: "Open Sans", sans-serif;
+  height: 100%;
+}
+
+body {
+  background: #ffffff;
+  height: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+#bouton-detail {
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  background: #fff;
+  color: #767676;
+  border: 1px solid #e8e8e8;
+  top: 20px;
+  right: 15px;
+  padding: 0 16px;
+  line-height: 37px;
+  height: 40px;
+}
+
+#evenement {
+  border: 1px solid #a8a7a7;
+}
+
+.even-date {
+  background: #f7f7f7;
+  padding: 12px 14px 8px;
+  margin-bottom: 12px;
+  vertical-align: baseline;
+}
+
+.even-adresse {
+  background: #f7f7f7;
+  padding: 12px 14px 8px;
+  margin-bottom: 12px;
+  vertical-align: baseline;
+}
+
+.even-prix {
+  background: #f7f7f7;
+  padding: 12px 14px 8px;
+  margin-bottom: 12px;
+  vertical-align: baseline;
+}
+
+#even-border {
+  border-left: 1px solid #a8a7a7;
+  padding: 20px 30px;
+}
+
+.bouton-detail {
+  border-top: 1px solid #a8a7a7;
+}
+
+.detail-even {
+  border: 1px solid #a8a7a7;
+  margin-bottom: 30px;
+  padding: 20px 30px;
+}
+
+.detail-date {
+  background: #f7f7f7;
+  padding: 12px 14px 8px;
+  margin-bottom: 12px;
+  vertical-align: baseline;
+}
+
+.detail-adresse {
+  background: #f7f7f7;
+  padding: 12px 14px 8px;
+  margin-bottom: 12px;
+  vertical-align: baseline;
+}
+
+.detail-prix {
+  background: #f7f7f7;
+  padding: 12px 14px 8px;
+  margin-bottom: 12px;
+  vertical-align: baseline;
+}
+
+@font-face {
+  font-family: "Seagram";
+  src: url("police/Seagram_tfb.ttf");
+}
+
+.navbar,
+.navbar-expand-lg,
+.navbar-light,
+#navstyle {
+  font-family: "Seagram", serif;
+  font-size: 25px;
+  background: radial-gradient(#ccae4a, rgba(219, 186, 114, 0.74));
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+/*# sourceMappingURL=app.css.map */

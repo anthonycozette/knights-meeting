@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Contact
+{% endblock %}
+
+{% block body %}
+    <h1 class="my-3">
+        Contactez-nous
+    </h1>
+    {% for label, messages in app.flashes(['success', 'warning', 'danger']) %}
+        {% for message in messages %}
+            <div class="alert alert-{{ label }} alert-dismissible fade show my-2" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+    {{ form_start(form) }}
+
+    <div class="row">
+        <div class="col-12 form-group">
+            {{ form_row(form.Nom) }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 form-group">
+            {{ form_row(form.email) }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 form-group">
+            {{ form_row(form.message) }}
+        </div>
+    </div>
+
+    {{ form_end(form) }}
+{# {{ form_end(form, {'render_rest' :false}) }} #}
+{% endblock %}

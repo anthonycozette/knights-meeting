@@ -1,0 +1,56 @@
+<h2>
+    Nos evenement a venir
+</h2>
+
+{% for evenement in evenements %}
+
+    <div class="col-12 col-md">
+
+        <div class="row mt-4" id="evenement">
+
+            <div class="col-3">
+                <a href="{{ path('evenement-details', {'slug':evenement.slug}) }}">
+                    <img src="{{ vich_uploader_asset(evenement, 'imageFile') }}" alt="" class="img-fluid"></a>
+                </div>
+
+                <div class="col-6">
+                    <h3 class="text-center">
+                        {{ evenement.nom }}
+                    </h3>
+                    <div>
+                        {{ evenement.description|u.truncate(200, '...', false) }}
+                    </div>
+                </div>
+
+                <div class="col-3 text-center" id="even-border">
+                    <div class="even-date">
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                        {{ evenement.dateDebut|date('d-m-Y') }}
+                        au
+                        {{ evenement.dateFin|date('d-m-Y') }}
+                    </div>
+                    <div class="even-adresse">
+                        <div>
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            {{ evenement.adresse }}
+                        </div>
+                        <div>
+                            {{ evenement.codePostal }}
+                            {{ evenement.ville }}
+                        </div>
+                    </div>
+                    <div class="even-prix">
+                        <i class="fa fa-ticket" aria-hidden="true"></i>
+                        {{ evenement.prix }}
+                        €
+                    </div>
+                </div>
+                <div class="bouton-detail">
+                    <a href="{{ path('evenement-details',{'slug': evenement.slug}) }}" id="bouton-detail">
+                        detail
+                    </a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    
