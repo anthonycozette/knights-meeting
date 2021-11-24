@@ -24,14 +24,18 @@
 
                 <div class="col-3 text-center" id="even-border">
                     <div class="even-date">
-                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                        <div>
+							<i class="far fa-calendar-alt"></i>
+						</div>
                         {{ evenement.dateDebut|date('d-m-Y') }}
                         au
                         {{ evenement.dateFin|date('d-m-Y') }}
                     </div>
                     <div class="even-adresse">
                         <div>
-                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            <div>
+								<i class="fas fa-map-marked-alt"></i>
+							</div>
                             {{ evenement.adresse }}
                         </div>
                         <div>
@@ -40,7 +44,9 @@
                         </div>
                     </div>
                     <div class="even-prix">
-                        <i class="fa fa-ticket" aria-hidden="true"></i>
+                        <div>
+							<i class="far fa-money-bill-alt"></i>
+						</div>
                         {{ evenement.prix }}
                         €
                     </div>
