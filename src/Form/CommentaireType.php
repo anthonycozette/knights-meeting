@@ -19,7 +19,7 @@ class CommentaireType extends AbstractType
             ->add('nom', TextType::class)
             ->add('email', EmailType::class)
             ->add('contenu', TextareaType::class)
-            ->add('Soumettre', SubmitType::class)
+            // ->add('Soumettre', SubmitType::class)
             ->remove('isPublished')
             ->remove('evenement')
             ->remove('createdAt');
