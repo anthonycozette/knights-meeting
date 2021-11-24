@@ -47,6 +47,13 @@ h3 {
     text-align: center;
 }
 
+img {
+    // width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #bouton-detail {
     font-size: 25px;
     font-weight: 500;
@@ -70,6 +77,7 @@ h3 {
     padding: 12px 14px 8px;
     margin-bottom: 12px;
     vertical-align: baseline;
+    text-align: center;
 }
 
 .even-adresse {
@@ -77,6 +85,7 @@ h3 {
     padding: 12px 14px 8px;
     margin-bottom: 12px;
     vertical-align: baseline;
+    text-align: center;
 }
 
 .even-prix {
@@ -84,6 +93,7 @@ h3 {
     padding: 12px 14px 8px;
     margin-bottom: 12px;
     vertical-align: baseline;
+    text-align: center;
 }
 
 #even-border {
@@ -99,6 +109,7 @@ h3 {
     border: 1px solid rgb(168, 167, 167);
     margin-bottom: 30px;
     padding: 20px 30px;
+    text-align: center;
 }
 
 .detail-date {
@@ -106,6 +117,7 @@ h3 {
     padding: 12px 14px 8px;
     margin-bottom: 12px;
     vertical-align: baseline;
+    text-align: center;
     // text-align: center;
 }
 
@@ -114,6 +126,7 @@ h3 {
     padding: 12px 14px 8px;
     margin-bottom: 12px;
     vertical-align: baseline;
+    text-align: center;
 }
 
 .detail-prix {
@@ -121,6 +134,7 @@ h3 {
     padding: 12px 14px 8px;
     margin-bottom: 12px;
     vertical-align: baseline;
+    text-align: center;
 }
 
 .navbar,
@@ -135,18 +149,22 @@ h3 {
     justify-content: center;
 }
 
+.nav-item {
+    margin-right: 30px;
+}
+
 #footerstyle {
     font-family: "Seagram", serif;
     font-size: 25px;
-    color: black;
+    color: white;
     background: #004C8C;
     justify-content: center;
 }
 
 .footer-basic {
     padding: 20px 0;
-    background-color: #ffffff;
-    color: #4b4c4d;
+    // background-color: #ffffff;
+    // color: #4b4c4d;
 }
 
 .footer-basic ul {

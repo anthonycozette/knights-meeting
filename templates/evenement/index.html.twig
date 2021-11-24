@@ -1,69 +1,74 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    Hello EvenementController!
+	Hello EvenementController!
 {% endblock %}
 
 {% block body %}
-    <h2>
-        Tous nos evenement
-    </h2>
+	<h2>
+		Tous nos evenement
+	</h2>
 
-    {% for evenement in evenements %}
+	{% for evenement in evenements %}
 
-        <div class="col-12">
+		<div class="col-12">
 
-            <div class="row mt-4" id="evenement">
+			<div class="row mt-4" id="evenement">
 
-                <div class="col-3">
-                    <a href="{{ path('evenement-details', {'slug':evenement.slug}) }}">
-                        <img src="{{ vich_uploader_asset(evenement, 'imageFile') }}" alt="" class="img-fluid">
-                    </a>
-                    </div>
+				<div class="col-3">
+					<a href="{{ path('evenement-details', {'slug':evenement.slug}) }}">
+						<img src="{{ vich_uploader_asset(evenement, 'imageFile') }}" alt="" class="img-fluid">
+					</a>
+				</div>
 
-                    <div class="col-6">
-                        <h3>
-                            {{ evenement.nom }}
-                        </h3>
-                        <div class="font-even">
-                            {{ evenement.description|u.truncate(200, '...', false) }}
-                        </div>
-                    </div>
+				<div class="col-6">
+					<h3>
+						{{ evenement.nom }}
+					</h3>
+					<div class="font-even">
+						{{ evenement.description|u.truncate(200, '...', false) }}
+					</div>
+				</div>
 
-                    <div class="col-3" id="even-border">
-                        <div class="even-date">
-                            <i class="fa fa-calendar" aria-hidden="true"></i>
-                            {{ evenement.dateDebut|date('d-m-Y') }}
-                            au
-                            {{ evenement.dateFin|date('d-m-Y') }}
-                        </div>
-                        <div class="even-adresse">
-                            <div>
-                                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                {{ evenement.adresse }}
-                            </div>
-                            <div>
-                                {{ evenement.codePostal }}
-                                {{ evenement.ville }}
-                            </div>
-                        </div>
-                        <div class="even-prix">
-                            <i class="fa fa-ticket" aria-hidden="true"></i>
-                            {{ evenement.prix }}
-                            €
-                        </div>
-                    </div>
-                    <div class="bouton-detail">
-                        <a href="{{ path('evenement-details',{'slug': evenement.slug}) }}" id="bouton-detail">
-                            detail
-                        </a>
-                    </div>
-                </div>
-            </div>
-        {% endfor %}
-        <div class="d-flex justify-content-center">
-            {% do evenements.setPageRange(2) %}
-            {{ knp_pagination_render(evenements, 'base/pagination.html.twig') }}
-        </div>
-    {% endblock %}
-    
+				<div class="col-3" id="even-border">
+					<div class="even-date">
+						<div>
+							<i class="far fa-calendar-alt"></i>
+						</div>
+						{{ evenement.dateDebut|date('d-m-Y') }}
+						au
+						{{ evenement.dateFin|date('d-m-Y') }}
+					</div>
+					<div class="even-adresse">
+						<div>
+							<div>
+								<i class="fas fa-map-marked-alt"></i>
+							</div>
+							{{ evenement.adresse }}
+							<br>
+							{{ evenement.codePostal }}
+							{{ evenement.ville }}
+						</div>
+
+					</div>
+					<div class="even-prix">
+						<div>
+							<i class="far fa-money-bill-alt"></i>
+						</div>
+						{{ evenement.prix }}
+						€
+					</div>
+				</div>
+				<div class="bouton-detail">
+					<a href="{{ path('evenement-details',{'slug': evenement.slug}) }}" id="bouton-detail">
+						detail
+					</a>
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+	<div class="d-flex justify-content-center">
+		{% do evenements.setPageRange(2) %}
+		{{ knp_pagination_render(evenements, 'base/pagination.html.twig') }}
+	</div>
+{% endblock %}
