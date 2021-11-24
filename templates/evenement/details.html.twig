@@ -72,15 +72,16 @@
 
 		</div>
 
-		<div class="mt-3">
 
-			<a href="{{ path('evenement') }}" class="btn btn-dark">
-				Retour a la liste
-			</a>
-
-		</div>
 	</div>
 
 	{% include "commentaire/form.html.twig" %}
 	{% include "commentaire/commentaires.html.twig" %}
+	<div class="m-3">
+
+		<a href="{{ path('evenement') }}" class="btn btn-dark">
+			Retour a la liste
+		</a>
+
+	</div>
 {% endblock %}
