@@ -22,15 +22,15 @@
                     </div>
 
                     <div class="col-6">
-                        <h3 class="text-center">
+                        <h3>
                             {{ evenement.nom }}
                         </h3>
-                        <div>
+                        <div class="font-even">
                             {{ evenement.description|u.truncate(200, '...', false) }}
                         </div>
                     </div>
 
-                    <div class="col-3 text-center" id="even-border">
+                    <div class="col-3" id="even-border">
                         <div class="even-date">
                             <i class="fa fa-calendar" aria-hidden="true"></i>
                             {{ evenement.dateDebut|date('d-m-Y') }}

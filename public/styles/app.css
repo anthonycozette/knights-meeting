@@ -1,3 +1,20 @@
+@font-face {
+  font-family: "Seagram";
+  src: url("police/Seagram_tfb.ttf");
+  font-family: "Charm-Bold";
+  src: url("police/Charm-Bold.ttf");
+  font-family: "Charm-Regular";
+  src: url("police/Charm-Regular.ttf");
+  font-family: "Charmonman-Bold";
+  src: url("police/Charmonman-Bold.ttf");
+  font-family: "Charmonman-Regular";
+  src: url("police/Charmonman-Regular.ttf");
+  font-family: "Estonia-Regular";
+  src: url("police/Estonia-Regular.ttf");
+  font-family: "Explora-Regular";
+  src: url("police/Explora-Regular.ttf");
+}
+
 html,
 body {
   font-family: "Open Sans", sans-serif;
@@ -21,6 +38,13 @@ ul {
 
 a {
   text-decoration: none;
+}
+
+h2,
+h3 {
+  font-family: "Charm-Bold";
+  font-size: 40px !important;
+  text-align: center;
 }
 
 #bouton-detail {
@@ -98,18 +122,15 @@ a {
   vertical-align: baseline;
 }
 
-@font-face {
-  font-family: "Seagram";
-  src: url("police/Seagram_tfb.ttf");
-}
-
 .navbar,
 .navbar-expand-lg,
 .navbar-light,
 #navstyle {
   font-family: "Seagram", serif;
   font-size: 25px;
-  background: radial-gradient(#ccae4a, rgba(219, 186, 114, 0.74));
+  background: #dbba72;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(219, 186, 114, 0.8)), color-stop(50%, #ccae4a), to(rgba(219, 186, 114, 0.8)));
+  background: linear-gradient(90deg, rgba(219, 186, 114, 0.8) 0%, #ccae4a 50%, rgba(219, 186, 114, 0.8) 100%);
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -118,7 +139,8 @@ a {
 #footerstyle {
   font-family: "Seagram", serif;
   font-size: 25px;
-  background: radial-gradient(#ccae4a, rgba(219, 186, 114, 0.74));
+  color: black;
+  background: #004C8C;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -181,5 +203,9 @@ a {
   text-align: center;
   font-size: 13px;
   margin-bottom: 0;
+}
+
+.font-even {
+  font-family: "Charm-Regular";
 }
 /*# sourceMappingURL=app.css.map */

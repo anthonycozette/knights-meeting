@@ -5,9 +5,9 @@
 {% endblock %}
 
 {% block body %}
-    <h1 class="my-3">
+    <h2 class="my-3">
         Contactez-nous
-    </h1>
+    </h2>
     {% for label, messages in app.flashes(['success', 'warning', 'danger']) %}
         {% for message in messages %}
             <div class="alert alert-{{ label }} alert-dismissible fade show my-2" role="alert">
