@@ -1,23 +1,11 @@
 @font-face {
   font-family: "Seagram";
-  src: url("police/Seagram_tfb.ttf");
-  font-family: "Charm-Bold";
-  src: url("police/Charm-Bold.ttf");
-  font-family: "Charm-Regular";
-  src: url("police/Charm-Regular.ttf");
-  font-family: "Charmonman-Bold";
-  src: url("police/Charmonman-Bold.ttf");
-  font-family: "Charmonman-Regular";
-  src: url("police/Charmonman-Regular.ttf");
-  font-family: "Estonia-Regular";
-  src: url("police/Estonia-Regular.ttf");
-  font-family: "Explora-Regular";
-  src: url("police/Explora-Regular.ttf");
+  src: local("Seagram_tfb"), url(police/Seagram_tfb.ttf);
+  font-weight: bold;
 }
 
 html,
 body {
-  font-family: "Open Sans", sans-serif;
   height: 100%;
 }
 
@@ -28,10 +16,10 @@ body {
 
 img {
   max-width: 100%;
-  -webkit-transition: -webkit-transform .1s;
-  transition: -webkit-transform .1s;
-  transition: transform .1s;
-  transition: transform .1s, -webkit-transform .1s;
+  -webkit-transition: -webkit-transform 0.1s;
+  transition: -webkit-transform 0.1s;
+  transition: transform 0.1s;
+  transition: transform 0.1s, -webkit-transform 0.1s;
 }
 
 img:hover {
@@ -146,15 +134,11 @@ img {
   text-align: center;
 }
 
-.navbar,
-.navbar-expand-lg,
-.navbar-light,
 #navstyle {
-  font-family: "Seagram", serif;
+  font-family: "Seagram";
   font-size: 25px;
-  background: #dbba72;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(219, 186, 114, 0.8)), color-stop(50%, #ccae4a), to(rgba(219, 186, 114, 0.8)));
-  background: linear-gradient(90deg, rgba(219, 186, 114, 0.8) 0%, #ccae4a 50%, rgba(219, 186, 114, 0.8) 100%);
+  background: #ffd752;
+  background: radial-gradient(circle, #ffd752 35%, #d79f00 100%);
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -165,10 +149,10 @@ img {
 }
 
 #footerstyle {
-  font-family: "Seagram", serif;
+  font-family: "Seagram";
   font-size: 25px;
   color: white;
-  background: #004C8C;
+  background: #0a0a9b;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
