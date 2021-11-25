@@ -1,100 +1,147 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    Profile de
-    {{ app.user.pseudo }}
+	Profile de
+	{{ app.user.pseudo }}
 {% endblock %}
 
 {% block body %}
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
-                Mes information
-            </button>
-        </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link" id="evenement-tab" data-bs-toggle="tab" data-bs-target="#evenement" type="button" role="tab" aria-controls="evenement" aria-selected="false">
-                Mes evenements
-            </button>
-        </li>
-    </ul>
-    <div class="tab-content mt-2" id="myTabContent">
-        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-        {% for message in app.flashes('message') %}
-        <div class="alert alert-success" role="alert">
-            {{message}}
-        </div>
-        {% endfor %}
-            <p>
-                Pseudo :
-                {{ app.user.pseudo }}
-            </p>
-            <p>
-                Nom :
-                {{ app.user.nom }}
-            </p>
-            <p>
-                Prénom :
-                {{ app.user.prenom }}
-            </p>
-            <p>
-                E-mail :
-                {{ app.user.email }}
-            </p>
-            <p>
-                Adresse :
-                {{ app.user.adresse }}
-            </p>
-            <p>
-                Code Postale :
-                {{ app.user.codePostal }}
-            </p>
-            <p>
-                Ville :
-                {{ app.user.ville }}
-            </p>
-            <a class="btn btn-primary" href="{{ path('user_profil_modifier') }}" role="button">
-                Modifier le profil
-            </a>
-            <a class="btn btn-primary" href="{{ path('user_pass_modifier') }}" role="button">
-                Modifier le mot de passe
-            </a>
-        </div>
-        <div class="tab-pane fade" id="evenement" role="tabpanel" aria-labelledby="evenement-tab">
-            {% for evenement in app.user.evenements %}
-                <p>
-                    Titre :
-                    {{ evenement.nom }}
-                </p>
-                <p>
-                    Date de debut :
-                    {{ evenement.dateDebut|date('d/m/Y') }}
-                </p>
-                <p>
-                    Date de fin :
-                    {{ evenement.dateFin|date('d/m/Y') }}
-                </p>
-                <p>
-                    Description :
-                    {{ evenement.description }}
-                </p>
-                <p>
-                    Prix :
-                    {{ evenement.prix }}
-                </p>
-                <p>
-                    Adresse :
-                    {{ evenement.adresse }}
-                </p>
-                <p>
-                    Ville :
-                    {{ evenement.ville }}
-                </p>
-                <p>
-                    Code postale :
-                    {{ evenement.codePostal }}
-                </p>
-            {% endfor %}
-        </div>
-    </div>
+	<div class="row">
+		<ul class="nav nav-tabs" id="myTab" role="tablist">
+			<li class="nav-item" role="presentation">
+				<button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
+					Mes information
+				</button>
+			</li>
+			<li class="nav-item" role="presentation">
+				<button class="nav-link" id="evenement-tab" data-bs-toggle="tab" data-bs-target="#evenement" type="button" role="tab" aria-controls="evenement" aria-selected="false">
+					Mes evenements
+				</button>
+			</li>
+		</ul>
+		<div class="tab-content mt-2" id="myTabContent">
+			<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+				{% for message in app.flashes('message') %}
+					<div class="alert alert-success" role="alert">
+						{{message}}
+					</div>
+				{% endfor %}
+				<div>
+					<h2>Profile de
+						{{ app.user.pseudo}}</h2>
+				</div>
+				<div class="col-2 mt-2">
+					<strong>Pseudo :</strong>
+					{{ app.user.pseudo }}
+				</div>
+				<div class="mt-2">
+					<strong>Nom :</strong>
+					{{ app.user.nom }}
+				</div>
+				<div class="mt-2">
+					<strong>Prénom :</strong>
+					{{ app.user.prenom }}
+				</div>
+				<div class="mt-2">
+					<strong>E-mail :</strong>
+					{{ app.user.email }}
+				</div>
+				<div class="mt-2">
+					<strong>Adresse :</strong>
+					{{ app.user.adresse }}
+				</div>
+				<div class="mt-2">
+					<strong>Code Postale :</strong>
+					{{ app.user.codePostal }}
+				</div>
+				<div class="mt-2">
+					<strong>Ville :</strong>
+					{{ app.user.ville }}
+				</div>
+				<div class="mt-2 mb-2">
+					<a class="btn btn-primary" href="{{ path('user_profil_modifier') }}" role="button">
+						Modifier le profil
+					</a>
+					<a class="btn btn-primary" href="{{ path('user_pass_modifier') }}" role="button">
+						Modifier le mot de passe
+					</a>
+				</div>
+			</div>
+			<div class="tab-pane fade" id="evenement" role="tabpanel" aria-labelledby="evenement-tab">
+				<div>
+					<h2>Evenement de
+						{{ app.user.pseudo}}({{app.user.evenements|length}})</h2>
+				</div>
+				{% for evenement in app.user.evenements %}
+					<div class="row mt-3" id="even">
+
+						<div class="col-8">
+
+							<div class="text-center">
+								<h2>
+									{{ evenement.nom }}
+								</h2>
+							</div>
+
+							<img src="{{ vich_uploader_asset(evenement, 'imageFile') }}" alt="">
+
+							<div class="font-even">
+								{{ evenement.description }}
+							</div>
+
+						</div>
+
+						<div class="col-4">
+
+							<div class="detail-even">
+
+								<div class="detail-date">
+
+									<h3>
+										Date:
+									</h3>
+
+									<div>
+										{{ evenement.dateDebut|date('d-m-Y') }}
+										au
+										{{ evenement.dateFin|date('d-m-Y') }}
+									</div>
+
+								</div>
+
+								<div class="detail-adresse">
+
+									<h3>
+										Localisation:
+									</h3>
+
+									<div>
+										{{ evenement.adresse }}
+										<br>
+										{{ evenement.codePostal }}
+										{{ evenement.ville }}
+									</div>
+
+								</div>
+
+								<div class="detail-prix">
+
+									<h3>Prix</h3>
+
+									<div>
+										{{evenement.prix}}
+										€
+									</div>
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
 {% endblock %}
