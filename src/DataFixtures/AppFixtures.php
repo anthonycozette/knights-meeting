@@ -23,7 +23,7 @@ class AppFixtures extends Fixture
         //creation d'un utilisateur
         $user = new User();
 
-        $user->setEmail('user@user.com')
+        $user->setEmail('admin@admin.com')
             ->setPseudo('cocobico')
             ->setNom('cozette')
             ->setRoles(["ROLE_ADMIN"])
