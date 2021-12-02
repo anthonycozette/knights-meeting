@@ -1,13 +1,51 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Evenement{% endblock %}
+{% block title %}Modification Evenement
+{% endblock %}
 
 {% block body %}
-    <h1>Edit Evenement</h1>
+	<h1>Modification de l'evenement</h1>
+	<div class="col-sm-12">
+		{{ form_start(form) }}
+		<div class="form-group">
+			{{ form_row(form.nom, {'attr': {'class': 'form-control'}}) }}
+		</div>
+		<div class="form-group">
+			{{ form_row(form.description, {'attr': {'class': 'form-control'}}) }}
+		</div>
+		<div class="form-group">
+			{{ form_row(form.dateDebut) }}
+		</div>
+		<div class="form-group">
+			{{ form_row(form.dateFin) }}
+		</div>
+		<div class="form-group">
+			{{ form_row(form.adresse, {'attr': {'class': 'form-control'}}) }}
+		</div>
+		<div class="form-group">
+			{{ form_row(form.codePostal, {'attr': {'class': 'form-control'}}) }}
+		</div>
+		<div class="form-group">
+			{{ form_row(form.ville, {'attr': {'class': 'form-control'}}) }}
+		</div>
+		<div class="form-group">
+			{{ form_row(form.prix, {'attr': {'class': 'form-control'}}) }}
+		</div>
+		<div class="form-group">
+			{{ form_row(form.imageFile, {'attr': {'class': 'form-control'}}) }}
+		</div>
+		<div class="form-group mt-2 mb-2">
+			<button class="btn btn-success">{{ button_label|default('Modifier') }}</button>
+			<a href="{{ path('user') }}" class="btn btn-dark">
+				Retour a la liste
+			</a>
+		</div>
+		{{ form_end(form) }}
+		{{ include('create_event/_delete_form.html.twig') }}
 
-    {{ include('create_event/_form.html.twig', {'button_label': 'Update'}) }}
+	</div>
+	{# {{ include('create_event/_form.html.twig', {'button_label': 'Update'}) }} #}
 
-    <a href="{{ path('create_event_index') }}">back to list</a>
+	{# <a class="btn btn-dark" href="{{ path('create_event_index') }}">Retour a la liste</a> #}
 
-    {{ include('create_event/_delete_form.html.twig') }}
 {% endblock %}

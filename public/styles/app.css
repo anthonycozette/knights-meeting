@@ -1,7 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 @font-face {
   font-family: "Seagram";
   src: local("Seagram_tfb"), url(police/Seagram_tfb.ttf);
   font-weight: bold;
+}
+
+@font-face {
+  font-family: "Charm-Bold";
+  src: local("Charm-Bold"), url(police/Charm-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Charm-Regular";
+  src: local("Charm-Regular"), url("police/Charm-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Charmonman-Bold";
+  src: local("Charmonman-Bold"), url("police/Charmonman-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Charmonman-Regular";
+  src: local("Charmonman-Regular"), url("police/Charmonman-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Estonia-Regular";
+  src: local("Estonia-Regular"), url("police/Estonia-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Explora-Regular";
+  src: local("Explora-Regular"), url("police/Explora-Regular.ttf");
 }
 
 html,
@@ -39,6 +74,11 @@ a {
   text-decoration: none;
 }
 
+h1 {
+  font-family: "Charm-Bold";
+  text-align: center;
+}
+
 h2,
 h3 {
   font-family: "Charm-Bold";
@@ -50,6 +90,10 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+p {
+  font-family: "Charmonman-Regular";
 }
 
 #bouton-detail {

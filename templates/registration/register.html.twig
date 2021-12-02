@@ -1,14 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}Register
+{% endblock %}
 
 {% block body %}
-    {% for flashError in app.flashes('verify_email_error') %}
-        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
-    {% endfor %}
+	{% for flashError in app.flashes('verify_email_error') %}
+		<div class="alert alert-danger" role="alert">{{ flashError }}</div>
+	{% endfor %}
 
-    <h2>Inscription</h2>
-<div class="col-sm-12">
+	<h2>Inscription</h2>
+	<div class="col-sm-12">
 		<div class="form-group">
 			{{ form_start(registrationForm) }}
 			{{ form_row(registrationForm.email, {'attr': {'class': 'form-control'}}) }}
@@ -19,14 +20,14 @@
 		<div class="form-group">
 			{{ form_row(registrationForm.pseudo, {'attr': {'class': 'form-control'}}) }}
 		</div>
-        {{ form_row(registrationForm.agreeTerms, {'attr': {'class': 'form-check'}}) }}
+		{{ form_row(registrationForm.agreeTerms, {'attr': {'class': 'form-check'}}) }}
 		<div class="form-group">
 			<input type="submit" value="Envoyer" class="btn btn-primary">
 		</div>
-		 {{ form_end(registrationForm) }}
+		{{ form_end(registrationForm) }}
 	</div>
 </div>
-    {# {{ form_start(registrationForm) }}
+{# {{ form_start(registrationForm) }}
         {{ form_row(registrationForm.email) }}
         {{ form_row(registrationForm.plainPassword, {
             label: 'Password'

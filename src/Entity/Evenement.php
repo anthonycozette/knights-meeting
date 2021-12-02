@@ -6,10 +6,12 @@ use App\Entity\User;
 use App\Entity\Commentaire;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\EvenementRepository;
+use Doctrine\Common\Annotations\Annotation;
 use Doctrine\Common\Collections\Collection;
 use Symfony\Component\HttpFoundation\File\File;
 use Doctrine\Common\Collections\ArrayCollection;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity(repositoryClass=EvenementRepository::class)
@@ -93,6 +95,7 @@ class Evenement
     private $commentaire;
 
     /**
+     * @Gedmo\Slug(fields={"nom"})
      * @ORM\Column(type="string", length=255)
      */
     private $slug;
@@ -290,12 +293,12 @@ class Evenement
         return $this->slug;
     }
 
-    public function setSlug(string $slug): self
-    {
-        $this->slug = $slug;
+    // public function setSlug(string $slug): self
+    // {
+    //     $this->slug = $slug;
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
     public function __toString()
     {
