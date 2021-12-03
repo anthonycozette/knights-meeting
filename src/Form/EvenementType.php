@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Evenement;
 use Symfony\Component\Form\AbstractType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Vich\UploaderBundle\Form\Type\VichImageType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -22,7 +23,7 @@ class EvenementType extends AbstractType
             ->add('nom',TextType::class)
             ->add('dateDebut',DateType::class)
             ->add('dateFin',DateType::class)
-            ->add('description',TextareaType::class)
+            ->add('description', CKEditorType::class)
             ->add('prix',NumberType::class)
             ->add('adresse',TextType::class)
             ->add('ville',TextType::class)

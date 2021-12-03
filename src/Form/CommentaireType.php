@@ -4,11 +4,12 @@ namespace App\Form;
 
 use App\Entity\Commentaire;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class CommentaireType extends AbstractType
@@ -18,7 +19,7 @@ class CommentaireType extends AbstractType
         $builder
             ->add('nom', TextType::class)
             ->add('email', EmailType::class)
-            ->add('contenu', TextareaType::class)
+            ->add('contenu', CKEditorType::class)
             // ->add('Soumettre', SubmitType::class)
             ->remove('isPublished')
             ->remove('evenement')

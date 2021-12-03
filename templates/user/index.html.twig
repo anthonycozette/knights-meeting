@@ -138,13 +138,19 @@
 							</div>
 
 						</div>
-						
+						<div class="m-1">
+							<a class="btn btn-info" href="{{ path('user-details',{'slug': evenement.slug}) }}">
+								detail
+							</a>
+							<a class="btn btn-warning" href="{{ path('create_event_edit', {'id': evenement.id}) }}">Modification</a>
+						</div>
 						{# {{ include('templates/create_event/_delete_form.html.twig') }} #}
 					</div>
-					<a class="btn btn-warning mt-2 " href="{{ path('create_event_edit', {'id': evenement.id}) }}">Modification</a>
+
 				{% endfor %}
-				
+
 			</div>
+			
 		</div>
 
 	</div>

@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	detail
+{% endblock %}
+
+{% block body %}
+
+	<div class="row mt-3">
+
+		<div class="col-8">
+
+			<div class="text-center">
+				<h2>
+					{{ evenement.nom }}
+				</h2>
+			</div>
+
+			<img src="{{ vich_uploader_asset(evenement, 'imageFile') }}" alt="">
+
+			<div class="font-even">
+				{{ evenement.description }}
+			</div>
+
+		</div>
+
+		<div class="col-4">
+
+			<div class="detail-even">
+
+				<div class="detail-date">
+
+					<h3>
+						Date:
+					</h3>
+
+					<div>
+						{{ evenement.dateDebut|date('d-m-Y') }}
+						au
+						{{ evenement.dateFin|date('d-m-Y') }}
+					</div>
+
+				</div>
+
+				<div class="detail-adresse">
+
+					<h3>
+						Localisation:
+					</h3>
+
+					<div>
+						{{ evenement.adresse }}
+						<br>
+						{{ evenement.codePostal }}
+						{{ evenement.ville }}
+					</div>
+
+				</div>
+
+				<div class="detail-prix">
+
+					<h3>Prix</h3>
+
+					<div>
+						{{evenement.prix}}
+						€
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+	</div>
+
+	{% include "commentaire/form.html.twig" %}
+	{% include "commentaire/commentaires.html.twig" %}
+	<div class="m-3">
+
+		<a href="{{ path('user') }}" class="btn btn-dark">
+			Retour a la liste
+		</a>
+
+	</div>
+{% endblock %}
